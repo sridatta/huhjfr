@@ -1,0 +1,37 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <title>gRAPh Genius</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body ng-app="myApp">
+  <div class="container" ng-controller="Main">
+    <img class="logo" src="logo.png" alt="" />
+    <div class="search-input">
+      <form ng-submit="search()">
+        <input type="text" placeholder="Starting Artist" ng-model="start" />
+        <input type="text" placeholder="Ending Artist" ng-model="end" />
+        <button type="submit">Search</button>
+      </form>
+    </div>
+
+    <div  ng-show="isLoading"  class="loading">
+      <div class="spinner"></div>
+      <h1>{{loadingMessage}}...</h1>
+    </div>
+    <div ng-show="!isLoading" class="results">
+      <h1 ng-if="results.length">There are {{results.length}} degrees of separation</h1>
+      <ol class="result-path">
+        <li ng-repeat="step in results" class="result-step">
+          <h2>{{step.song}}</h2>
+          <p><span class="artist-name">{{step.start}}</span> was the {{step.startRole}}, <span class="artist-name">{{step.end}}</span> was the {{step.endRole}}</p>
+          <youtube ng-if="step.ytId" yt-id="{{step.ytId}}"></youtube>
+        </li>
+      </ol>
+    </div>
+  </div>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script>
+  <script type="text/javascript" src="app.js"></script>
+</body>
+</html>

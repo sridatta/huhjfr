@@ -1,0 +1,20 @@
+{
+  "name": "graph-genius",
+  "version": "0.0.0",
+  "description": "CS194 Final Project",
+  "main": "server.js",
+  "dependencies": {
+    "ejs": "~1.0.0",
+    "async": "~0.6.2",
+    "rapgenius-js": "sridatta/RapGenius-JS",
+    "express": "~3.5.1",
+    "request": "~2.34.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "sridatta",
+  "license": "MIT"
+}
