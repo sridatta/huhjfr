@@ -1,0 +1,85 @@
+{
+    "Lollipop +=+=+ Lil Wayne": {
+        "sampled_by": [
+            {
+                "artist": "JJ", 
+                "title": "Ecstasy"
+            }, 
+            {
+                "artist": "David Banner", 
+                "title": "Shawty Say"
+            }, 
+            {
+                "artist": "Girl Talk", 
+                "title": "Play Your Part (Pt. 2)"
+            }, 
+            {
+                "artist": "Khia", 
+                "title": "Lollipop"
+            }, 
+            {
+                "artist": "Young Jeezy", 
+                "title": "Lollipop (Freestyle)"
+            }, 
+            {
+                "artist": "Chalie Boy", 
+                "title": "Body Rock"
+            }, 
+            {
+                "artist": "Franco El Gorila", 
+                "title": "Ella Quiere"
+            }, 
+            {
+                "artist": "Novakane", 
+                "title": "Shawty Said"
+            }, 
+            {
+                "artist": "Lil Wayne", 
+                "title": "He Rap, He Sang"
+            }, 
+            {
+                "artist": "Da Inphamus Amadeuz", 
+                "title": "Buck a Shot"
+            }, 
+            {
+                "artist": "DJ Earworm", 
+                "title": "Viva La Pop"
+            }, 
+            {
+                "artist": "Crooked I", 
+                "title": "Lollipop Freestyle"
+            }
+        ], 
+        "sampled_from": [
+            {
+                "artist": "Swizz Beatz", 
+                "title": "It's Me...(Remix)"
+            }, 
+            {
+                "artist": "Juvenile", 
+                "title": "Back That Azz Up"
+            }
+        ], 
+        "song": {
+            "artist": "Lil Wayne", 
+            "title": "Lollipop"
+        }
+    }, 
+    "Weekend +=+=+ Daz Dillinger": {
+        "sampled_by": [], 
+        "sampled_from": [
+            {
+                "artist": "Los Angeles Negros", 
+                "title": "Murio La Flor"
+            }, 
+            {
+                "artist": "The Notorious B.I.G.", 
+                "title": "Big Poppa"
+            }
+        ], 
+        "song": {
+            "artist": "Daz Dillinger", 
+            "title": "Weekend"
+        }
+    }
+}

@@ -62,14 +62,14 @@ def get_songs(soup, list_type):
 	song_items = get_page_inner_content_list(soup, list_type)
 	if len(song_items) == 0:
 		return []
-	song_tuples = []
+	song_dicts = []
 	for song_item in song_items.find_all("li", {"class": "listEntry sampleEntry"}):
 		song_detail = song_item.find("span", {"class": "trackDetails"})
 		song_name = song_detail.find("a", {"class":"trackName playIcon"}).text
 		song_artist = song_detail.find("span", {"class": "trackArtist"}).find("a").text
-		append_tuple = (song_name, song_artist)
-		song_tuples.append(append_tuple)
-	return song_tuples
+		append_tuple = {"title":song_name, "artist":song_artist}
+		song_dicts.append(append_tuple)
+	return song_dicts
 
 
 data_dict = {}
@@ -86,13 +86,13 @@ def run():
 
 		current_song_title = get_song(soup)
 		current_song_artist = get_song_artist(soup)
-		current_song_tuple= (current_song_title, current_song_artist)
+		current_song_dict= {"title":current_song_title,"artist": current_song_artist}
 		current_song_key = "%s +=+=+ %s" % (current_song_title, current_song_artist)
 
 		sampled_from = get_songs(soup, 0)
 		sampled_by = get_songs(soup, 1)
 
-		data_dict[current_song_key] = {"song":current_song_tuple,"sampled_from": sampled_from, "sampled_by": sampled_by}
+		data_dict[current_song_key] = {"song":current_song_dict,"sampled_from": sampled_from, "sampled_by": sampled_by}
 	
 	with open('whosampled_data.json', 'w') as outfile:
 		json.dump(data_dict, outfile, sort_keys = True, indent = 4, ensure_ascii=False)
@@ -100,5 +100,3 @@ def run():
 
 if __name__ == "__main__":
 	run()
-	"""r = requests.get("http://www.whosampled.com/track/view/3898")
-	soup = BeautifulSoup(r.text)"""
