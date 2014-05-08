@@ -6,7 +6,7 @@ import re
 import unicodedata
 
 CHECK_IN_ALLOWED=False
-
+output_file = "whosampled_data.json"
 
 # this method was made to get past json dump errors with accents and shit
 def text_normalize(text):
@@ -154,7 +154,7 @@ def run():
             data_dict[current_song_key] = {"song":current_song_dict,"sampled_from": sampled_from, "sampled_by": sampled_by}
 
             if i % 200 == 0:
-                with open('whosampled_data_no_checks.json', 'w') as outfile:
+                with open(output_file, 'w') as outfile:
                     json.dump(data_dict, outfile, sort_keys = True, indent = 4, ensure_ascii=True)
         except Exception, e:
             print "++++++++++"
@@ -165,7 +165,7 @@ def run():
             print sampled_by
             print "++++++++++"
 
-    with open('whosampled_data.json', 'w') as outfile:
+    with open(output_file, 'w') as outfile:
         json.dump(data_dict, outfile, sort_keys = True, indent = 4, ensure_ascii=True, encoding='utf-8')
 
 
